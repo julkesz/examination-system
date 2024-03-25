@@ -2,7 +2,7 @@ spring:
   application:
     name: Examination-module-backend
   profiles:
-    active: dev
+    active: local
   mvc:
     dispatch-options-request: true
   sql:

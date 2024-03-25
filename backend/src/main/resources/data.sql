@@ -1,9 +1,9 @@
 -- every user has 'password' as a password
 INSERT INTO _user (email, firstname, lastname, password, role) VALUES
-('rafal.nowak@gmail.com', 'Rafał', 'Nowak', '$2a$10$RQKsiiViCvNo30TvOc/A5uZZxhE4KDjNfxNpn.JCCjFbC2KR5SKru', 'TEACHER'),
+('teacher@gmail.com', 'Rafał', 'Nowak', '$2a$10$RQKsiiViCvNo30TvOc/A5uZZxhE4KDjNfxNpn.JCCjFbC2KR5SKru', 'TEACHER'),
 ('marcin.bryszek@gmail.com', 'Marcin', 'Bryszak', '$2a$10$RQKsiiViCvNo30TvOc/A5uZZxhE4KDjNfxNpn.JCCjFbC2KR5SKru', 'TEACHER'),
 ('ewa.janiszewska@gmail.com', 'Ewa', 'Janiszewska', '$2a$10$RQKsiiViCvNo30TvOc/A5uZZxhE4KDjNfxNpn.JCCjFbC2KR5SKru', 'TEACHER'),
-('jan.kowalski@gmail.com', 'Jan', 'Kowalski', '$2a$10$RQKsiiViCvNo30TvOc/A5uZZxhE4KDjNfxNpn.JCCjFbC2KR5SKru', 'STUDENT'),
+('student@gmail.com', 'Jan', 'Kowalski', '$2a$10$RQKsiiViCvNo30TvOc/A5uZZxhE4KDjNfxNpn.JCCjFbC2KR5SKru', 'STUDENT'),
 ('monika.meksula@gmail.com', 'Monika', 'Meksuła', '$2a$10$RQKsiiViCvNo30TvOc/A5uZZxhE4KDjNfxNpn.JCCjFbC2KR5SKru', 'STUDENT'),
 ('aleksandra.dejko@gmail.com', 'Aleksandra', 'Dejko', '$2a$10$RQKsiiViCvNo30TvOc/A5uZZxhE4KDjNfxNpn.JCCjFbC2KR5SKru', 'STUDENT'),
 ('oliwia.staszic@gmail.com', 'Oliwia', 'Staszic', '$2a$10$RQKsiiViCvNo30TvOc/A5uZZxhE4KDjNfxNpn.JCCjFbC2KR5SKru', 'STUDENT'),
@@ -15,15 +15,15 @@ INSERT INTO _user (email, firstname, lastname, password, role) VALUES
 
 
 INSERT INTO course (code, name, description, coordinator_id) VALUES
-('APSI', 'Analiza i projektowanie systemów informacyjnych', 'W ramach wykładu omawiane są zagadnienia dotyczące cyklu życia projektu informatycznego realizacji projektu informatycznego oraz jego realizacji w oparciu o różne metodyki: tradycyjne i zwinne.', (SELECT id FROM _user WHERE email = 'rafal.nowak@gmail.com')),
-('AIS', 'Architektura i integracja systemów', 'Celem przedmiotu jest przedstawienie problemu integracji złożonych systemów na poziomie architektonicznym, miejsca i roli systemów informatycznych w architekturze korporacyjnej.', (SELECT id FROM _user WHERE email = 'rafal.nowak@gmail.com')),
+('APSI', 'Analiza i projektowanie systemów informacyjnych', 'W ramach wykładu omawiane są zagadnienia dotyczące cyklu życia projektu informatycznego realizacji projektu informatycznego oraz jego realizacji w oparciu o różne metodyki: tradycyjne i zwinne.', (SELECT id FROM _user WHERE email = 'teacher@gmail.com')),
+('AIS', 'Architektura i integracja systemów', 'Celem przedmiotu jest przedstawienie problemu integracji złożonych systemów na poziomie architektonicznym, miejsca i roli systemów informatycznych w architekturze korporacyjnej.', (SELECT id FROM _user WHERE email = 'teacher@gmail.com')),
 ('SIU', 'Sieci inteligennych urządzeń', 'Tematyka przedmiotu obejmuje funkcjonowanie urządzeń inteligentnych wyposażonych w układy wykonawcze. ', (SELECT id FROM _user WHERE email = 'marcin.bryszek@gmail.com')),
 ('SWO', 'Sztuka wytwarzania oprogramowania', 'Przedmiot ma na celu nauczenie podstaw technik i dobrych praktyk stosowanych w przemysłowym wytwarzaniu oprogramowania.', (SELECT id FROM _user WHERE email = 'marcin.bryszek@gmail.com')),
 ('PROI', 'Programowanie obiektowe', 'Celem przedmiotu jest zapoznanie studenta z metodyką programowania i modelowania obiektowego oraz rodzajowego z wykorzystaniem mechanizmów języka C++.', (SELECT id FROM _user WHERE email = 'ewa.janiszewska@gmail.com'));
 
 
 INSERT INTO enrollment (course_code, student_id) VALUES
-('APSI',(SELECT id FROM _user WHERE email = 'jan.kowalski@gmail.com')),
+('APSI',(SELECT id FROM _user WHERE email = 'student@gmail.com')),
 ('APSI',(SELECT id FROM _user WHERE email = 'monika.meksula@gmail.com')),
 ('APSI',(SELECT id FROM _user WHERE email = 'aleksandra.dejko@gmail.com')),
 ('APSI',(SELECT id FROM _user WHERE email = 'oliwia.staszic@gmail.com')),
@@ -32,7 +32,7 @@ INSERT INTO enrollment (course_code, student_id) VALUES
 ('AIS',(SELECT id FROM _user WHERE email = 'oliwia.staszic@gmail.com')),
 ('AIS',(SELECT id FROM _user WHERE email = 'bartlomiej.chrabaszcz@gmail.com')),
 ('AIS',(SELECT id FROM _user WHERE email = 'marcin.stepniewski@gmail.com')),
-('SIU',(SELECT id FROM _user WHERE email = 'jan.kowalski@gmail.com')),
+('SIU',(SELECT id FROM _user WHERE email = 'student@gmail.com')),
 ('SIU',(SELECT id FROM _user WHERE email = 'monika.meksula@gmail.com')),
 ('SIU',(SELECT id FROM _user WHERE email = 'aleksandra.dejko@gmail.com')),
 ('SIU',(SELECT id FROM _user WHERE email = 'oliwia.staszic@gmail.com')),
