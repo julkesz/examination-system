@@ -34,9 +34,5 @@ yarn dev
 pnpm dev
 ```
 3. Open http://localhost:4000 with your browser to see the result.
-4. To log in as a teacher, use:
-email: teacher@gmail.com
-password: password
-6. To log in as a student, use:
-email: student@gmail.com
-password: password
+4. To log in as a teacher, type: email: teacher@gmail.com and password: password
+5. To log in as a student, type: email: student@gmail.com and password: password
